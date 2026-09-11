@@ -103,23 +103,46 @@ h1{
         <button py-click="create_order">Create Order</button>
         <div id="selected items"></div>
 
-        <div id="recipt"></div>
-            <h3>=== Recipt ===</h3>
+ <!-- RECEIPT POP-UP -->
+    <div id="receiptPopup">
 
-            <p>Subtotal: Php<span id="subtotal">0.00</span></p>
-            
-            <p>Tax: Php<span id="tax">0.00</span></p>
+        <div class="receipt">
+
+            <p class="receipt-title">
+                === Receipt ===
+            </p>
+
+            <div id="receiptItems"></div>
 
             <p>
-                <strong>
-                    Total: Php<span id="total">0.00</span>
-                </strong>
+                Subtotal: Php<span id="subtotal">0.00</span>
             </p>
+
+            <p>
+                Tax: Php<span id="tax">0.00</span>
+            </p>
+
+            <p class="total">
+                Total: Php<span id="total">0.00</span>
+            </p>
+
+            <button class="close-button"
+                    py-click="close_receipt">
+                Close
+            </button>
+
         </div>
 
-        <!-- Python / PyScript-->
-        <script type="py">
+    </div>
 
-        </script>
+
+    <!-- PYSCRIPT -->
+    <script type="py">
+
+from pyscript import document
+
+
+# Tax is 12%
+TAX_RATE = 0.12
 </body>
 </html>
