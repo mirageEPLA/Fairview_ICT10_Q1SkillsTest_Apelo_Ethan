@@ -1,38 +1,69 @@
-def create_order (event):
+def create_order(event=None):
 
-    #Get all checked coffee items
     coffees = document.querySelectorAll(".coffee")
 
     subtotal = 0
-    selected_items = []
+    items = ""
 
-    for coffee.checked:
-        name = coffee.getAttribute("data-name")
-        price = float(coffee.getAttribute("data-price"))
+    # Get the selected coffee items
+    for coffee in coffees:
 
-        subtotal += price
+        if coffee.checked:
 
-        selected_items.append(f"{name} - Php{price:.2f}")
+            name = coffee.getAttribute("data-name")
+            price = float(coffee.getAttribute("data-price"))
 
-    # Calculate 12% tax
-    tax = subtotal * 0.12
+            subtotal += price
 
-    #Calculate total
-    total = subtotal + tax
+            items += f"""
+            <p>
+                {name}: ₱{price:.2f}
+            </p>
+            """
 
-    # Display selected products
-    items_display = document.getElementById("selected-items")
 
-    if selected_items:
-        items_display.innerHTML = ("<strong>Selected Products:</strong><br>" + "<br>".join(selected_items))
+    # If no item is selected
+    if subtotal == 0:
+
+        document.querySelector("#receiptItems").innerHTML = \
+            "<p>Please select at least one item.</p>"
+
+        document.querySelector("#subtotal").innerText = "0.00"
+        document.querySelector("#tax").innerText = "0.00"
+        document.querySelector("#total").innerText = "0.00"
+
     else:
-        items_display.innerHTML= "No products selected."
 
-    #Display receipt
-    document.getElementById("subtotal").innerText = f"{subtotal:.2f}"
-     document.getElementById("tax").innerText = f"{tax:.2f}"
-      document.getElementById("total").innerText = f"{total:.2f}"
-      </script>
+        # Calculate tax
+        tax = subtotal * TAX_RATE
 
-      </body>
-      </html>
+        # Calculate total
+        total = subtotal + tax
+
+        # Put selected items in receipt
+        document.querySelector("#receiptItems").innerHTML = items
+
+        # Put prices in receipt
+        document.querySelector("#subtotal").innerText = \
+            f"{subtotal:.2f}"
+
+        document.querySelector("#tax").innerText = \
+            f"{tax:.2f}"
+
+        document.querySelector("#total").innerText = \
+            f"{total:.2f}"
+
+
+    # SHOW THE POP-UP
+    document.querySelector("#receiptPopup").style.display = "block"
+
+
+def close_receipt(event=None):
+
+    # Hide the receipt
+    document.querySelector("#receiptPopup").style.display = "none"
+
+    </script>
+
+</body>
+</html
