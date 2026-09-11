@@ -1,0 +1,125 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://pyscript.net/releases/2026.7.3/core.css" />
+    <script type="module" src="https://pyscript.net/releases/2026.7.3/core.js"></script>
+    <title>Skils Test</title>
+    <style>
+	body{
+			background-color: lightblue;
+			background-image: url('');
+			background-size:cover;
+			background-repeat: no-repeat;
+		}
+
+		#login-form{
+			background-color: rgba(103,133,194, 0.3);
+			padding: 30px;
+			border-radius: 12px;
+			width: 500px;
+			margin: auto;
+			box-shadow: 0 4px 10px rgba(0,0,0,0. 3);
+			border: 1px dotted white;
+			color: rgb(178, 178, 237);
+		}
+input::placeholder{
+	color: rgb(173, 173, 204);
+
+}
+button, input[type="reset"] {
+	font-size: 18px;
+	font-family: Consolas;
+	background-color: #03a1fc;
+	border-radius: 15px;
+}
+
+lable{
+	font-size: 18px;
+	font-family: Consolas;
+}
+h1{
+
+	font-family: Consolas;
+}
+
+</style>
+
+</head>
+<body>
+
+		<h2>OBMC Entrep Fair Group 1 - Coffee Shop</h2>
+
+        <h3>Menu: </h3>
+
+        <div class:="menu-item">
+            <input type="checkbox"
+                    class="coffee"
+                    data-name="Americano"
+                    data-price="120">
+            Americano
+            <span class="price">Php 120.00</span>
+        </div>
+
+       <div class:="menu-item">
+            <input type="checkbox"
+                    class="coffee"
+                    data-name="Spanish Latte"
+                    data-price="140">
+            Spanish Latte
+            <span class="price">Php 140.00</span>
+        </div>
+
+        <div class:="menu-item">
+            <input type="checkbox"
+                    class="coffee"
+                    data-name="Americano"
+                    data-price="180">
+            Cold Brew Malt
+            <span class="price">Php 180.00</span>
+        </div>
+
+        <div class:="menu-item">
+            <input type="checkbox"
+                    class="coffee"
+                    data-name="Americano"
+                    data-price="167">
+            Affogato
+            <span class="price">Php 167.00</span>
+        </div>
+
+
+        <div class:="menu-item">
+            <input type="checkbox"
+                    class="coffee"
+                    data-name="Americano"
+                    data-price="150">
+           Caramel Macchiato
+            <span class="price">Php 150.00</span>
+        </div>
+
+        <button py-click="create_order">Create Order</button>
+        <div id="selected items"></div>
+
+        <div id="recipt"></div>
+            <h3>=== Recipt ===</h3>
+
+            <p>Subtotal: Php<span id="subtotal">0.00</span></p>
+            
+            <p>Tax: Php<span id="tax">0.00</span></p>
+
+            <p>
+                <strong>
+                    Total: Php<span id="total">0.00</span>
+                </strong>
+            </p>
+        </div>
+
+        <!-- Python / PyScript-->
+        <script type="py">
+
+        </script>
+</body>
+</html>
